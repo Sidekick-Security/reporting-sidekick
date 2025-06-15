@@ -1,0 +1,16 @@
+# Configuration file for Reporting Sidekick
+# Copy this file to conf.py and update with your actual API credentials
+
+# SysReptor API Configuration
+# Your SysReptor instance URL - include trailing slash
+sysreptorAPIUrl = "https://your-sysreptor-instance.com/api/v1/"
+
+# SysReptor API Authorization Header
+# Get your API token from SysReptor Settings > API Tokens
+# Format: "Authorization: Bearer sysreptor_YOUR_TOKEN_HERE"
+sysreptorAPI = "Authorization: Bearer sysreptor_YOUR_TOKEN_HERE"
+
+# ChatGPT/OpenAI API Configuration
+# Get your API key from https://platform.openai.com/api-keys
+# Format: "sk-proj-YOUR_API_KEY_HERE"
+chatgptAPIKey = "sk-proj-YOUR_OPENAI_API_KEY_HERE"

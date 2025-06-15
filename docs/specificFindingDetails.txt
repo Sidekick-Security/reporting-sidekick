@@ -1,0 +1,62 @@
+HTTP 200 OK
+Allow: GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+Content-Type: application/json
+Vary: Accept
+
+{
+    "id": "f2f66694-fd5b-49d7-8643-b885b757a9a4",
+    "created": "2025-06-10T18:48:00.518308Z",
+    "updated": "2025-06-10T18:49:19.110422Z",
+    "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/f2f66694-fd5b-49d7-8643-b885b757a9a4",
+    "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/f2f66694-fd5b-49d7-8643-b885b757a9a4/images",
+    "usage_count": 0,
+    "source": "created",
+    "tags": [
+        "vulnerabilityScanning"
+    ],
+    "translations": [
+        {
+            "id": "fd3d80fc-4406-48d7-bad1-c65ec1ac6794",
+            "created": "2025-06-10T18:48:00.520697Z",
+            "updated": "2025-06-10T18:48:00.522113Z",
+            "language": "en-US",
+            "status": "in-progress",
+            "is_main": true,
+            "risk_score": null,
+            "risk_level": null,
+            "data": {
+                "title": "Test Vuln Scan Template",
+                "recommendation": "fix the issue",
+                "affected_components": [
+                    "www.test.com",
+                    "www.test2.com"
+                ],
+                "retest_status": "open",
+                "risk_description": "Test risk Description",
+                "compliance_implications": "TBD",
+                "modified_title": "New name for vuln scan template",
+                "cvss_number": 2.5,
+                "risk_rating": "Low"
+            }
+        }
+    ],
+    "lock_info": {
+        "created": "2025-06-10T18:48:00.944856Z",
+        "updated": "2025-06-10T18:49:31.228607Z",
+        "last_ping": "2025-06-10T18:49:31.228514Z",
+        "expires": "2025-06-10T18:51:01.228514Z",
+        "user": {
+            "id": "d3da54f2-b747-4a5f-ab1f-be36bb5c268d",
+            "username": "rgriffin",
+            "name": "Ryan Griffin",
+            "color": "#4b3baf",
+            "title_before": null,
+            "first_name": "Ryan",
+            "middle_name": "",
+            "last_name": "Griffin",
+            "title_after": null,
+            "is_active": true
+        }
+    },
+    "copy_of": null
+}

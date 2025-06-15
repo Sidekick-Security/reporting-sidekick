@@ -1,0 +1,1017 @@
+Located at https://sidekick.sysre.pt/api/v1/findingtemplates
+
+HTTP 200 OK
+Allow: GET, POST, HEAD, OPTIONS
+Content-Type: application/json
+Vary: Accept
+
+{
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": "486a5d21-211d-4e7d-a05a-0d2a6f139e42",
+            "created": "2022-10-19T10:30:48.055519Z",
+            "updated": "2025-01-29T18:41:11.691749Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/486a5d21-211d-4e7d-a05a-0d2a6f139e42",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/486a5d21-211d-4e7d-a05a-0d2a6f139e42/images",
+            "usage_count": 1,
+            "source": "imported",
+            "tags": [
+                "web"
+            ],
+            "translations": [
+                {
+                    "id": "f2af4df5-01c9-4e2c-82d7-76f4e0b164ae",
+                    "created": "2023-07-31T11:58:22.094624Z",
+                    "updated": "2025-01-29T18:41:11.687883Z",
+                    "language": "en-US",
+                    "status": "finished",
+                    "is_main": true,
+                    "risk_score": 9.8,
+                    "risk_level": "critical",
+                    "data": {
+                        "title": "SQL Injection (SQLi)"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "544c62bf-880d-447e-bc17-1b0fd0175344",
+            "created": "2025-02-13T19:54:31.977866Z",
+            "updated": "2025-02-13T19:54:31.991375Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/544c62bf-880d-447e-bc17-1b0fd0175344",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/544c62bf-880d-447e-bc17-1b0fd0175344/images",
+            "usage_count": 1,
+            "source": "created",
+            "tags": [
+                "internal"
+            ],
+            "translations": [
+                {
+                    "id": "54e487cc-e27e-4336-bd08-1f9b9b380528",
+                    "created": "2025-02-13T19:54:31.980635Z",
+                    "updated": "2025-02-13T19:54:31.983745Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 8.8,
+                    "risk_level": "high",
+                    "data": {
+                        "title": "Overly Permissive ADCS Template \u2013 ESC1"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "ead42d79-10fe-4acc-a648-3177845ce4b9",
+            "created": "2025-02-11T20:16:16.891735Z",
+            "updated": "2025-02-12T20:27:58.310390Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/ead42d79-10fe-4acc-a648-3177845ce4b9",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/ead42d79-10fe-4acc-a648-3177845ce4b9/images",
+            "usage_count": 3,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "3d8c157f-54b6-4e44-844b-1df47faf5c8e",
+                    "created": "2025-02-11T20:16:16.893037Z",
+                    "updated": "2025-02-11T20:16:16.894843Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 8.6,
+                    "risk_level": "high",
+                    "data": {
+                        "title": "DHCPv6 Poisoning + Web Proxy Auto-Discovery (WPAD) Interception"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "79df9a9f-1371-42a3-befa-c1b93fafb1e8",
+            "created": "2025-02-08T19:16:38.970388Z",
+            "updated": "2025-03-31T18:16:50.120410Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/79df9a9f-1371-42a3-befa-c1b93fafb1e8",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/79df9a9f-1371-42a3-befa-c1b93fafb1e8/images",
+            "usage_count": 3,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "3086a8fd-3d23-4507-afb9-9e36f4f5a229",
+                    "created": "2025-02-08T19:16:38.971799Z",
+                    "updated": "2025-02-08T19:16:38.973233Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 7.6,
+                    "risk_level": "high",
+                    "data": {
+                        "title": "Lack of Server Side Validation"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "ba52b24e-2774-4ff8-971e-04c1ae56fc0c",
+            "created": "2025-04-16T22:30:02.960773Z",
+            "updated": "2025-04-16T22:30:02.974105Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/ba52b24e-2774-4ff8-971e-04c1ae56fc0c",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/ba52b24e-2774-4ff8-971e-04c1ae56fc0c/images",
+            "usage_count": 1,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "e2b6abb1-a831-4eb8-8621-a08d59fc89cc",
+                    "created": "2025-04-16T22:30:02.964601Z",
+                    "updated": "2025-04-16T22:30:02.967453Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 7.5,
+                    "risk_level": "high",
+                    "data": {
+                        "title": "Excessive Data Exposure"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "9a7aeba5-3ad9-4763-ae20-45c6483439c9",
+            "created": "2022-10-19T10:26:09.754222Z",
+            "updated": "2025-01-29T18:41:11.669378Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/9a7aeba5-3ad9-4763-ae20-45c6483439c9",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/9a7aeba5-3ad9-4763-ae20-45c6483439c9/images",
+            "usage_count": 0,
+            "source": "imported",
+            "tags": [
+                "web"
+            ],
+            "translations": [
+                {
+                    "id": "696ba8d4-0279-4650-9668-d7b139add250",
+                    "created": "2023-07-31T11:58:22.091588Z",
+                    "updated": "2025-01-29T18:41:11.666046Z",
+                    "language": "en-US",
+                    "status": "finished",
+                    "is_main": true,
+                    "risk_score": 7.5,
+                    "risk_level": "high",
+                    "data": {
+                        "title": "XML External Entity Injection (XXE)"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "03484c75-74a8-4c39-ab68-ab9de3e8c4d8",
+            "created": "2025-02-11T20:15:43.212928Z",
+            "updated": "2025-02-12T20:28:30.224617Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/03484c75-74a8-4c39-ab68-ab9de3e8c4d8",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/03484c75-74a8-4c39-ab68-ab9de3e8c4d8/images",
+            "usage_count": 1,
+            "source": "created",
+            "tags": [
+                "internal"
+            ],
+            "translations": [
+                {
+                    "id": "41615d06-33e4-49fd-813d-b1e3c41386fd",
+                    "created": "2025-02-11T20:15:43.214669Z",
+                    "updated": "2025-02-11T20:15:43.216432Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 7.3,
+                    "risk_level": "high",
+                    "data": {
+                        "title": "Multicast/Broadcast Name Resolution Poisoning"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "60f8fa16-e5a4-48ac-97ff-8686b2185a3c",
+            "created": "2024-12-24T20:20:04.368165Z",
+            "updated": "2025-02-13T17:04:53.233370Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/60f8fa16-e5a4-48ac-97ff-8686b2185a3c",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/60f8fa16-e5a4-48ac-97ff-8686b2185a3c/images",
+            "usage_count": 5,
+            "source": "imported",
+            "tags": [
+                "web",
+                "external"
+            ],
+            "translations": [
+                {
+                    "id": "43f4edec-f629-40cd-958a-49c6253aaeaa",
+                    "created": "2024-12-24T20:20:04.369664Z",
+                    "updated": "2025-02-04T13:12:08.245422Z",
+                    "language": "en-US",
+                    "status": "finished",
+                    "is_main": true,
+                    "risk_score": 7.3,
+                    "risk_level": "high",
+                    "data": {
+                        "title": "Insecure Direct Object Reference"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fba3f282-d94a-4b97-8993-a667c055b6b8",
+            "created": "2025-04-15T13:57:13.247661Z",
+            "updated": "2025-04-15T13:57:13.259726Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/fba3f282-d94a-4b97-8993-a667c055b6b8",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/fba3f282-d94a-4b97-8993-a667c055b6b8/images",
+            "usage_count": 0,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "d212022d-c85b-4b87-b55e-3d73d34bb373",
+                    "created": "2025-04-15T13:57:13.249976Z",
+                    "updated": "2025-04-15T13:57:13.251833Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 7.2,
+                    "risk_level": "high",
+                    "data": {
+                        "title": "Stored Cross-Site Scripting (XSS)"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "5ac673e4-a147-42e9-a676-4d54e61cfcaa",
+            "created": "2025-03-12T15:47:26.310667Z",
+            "updated": "2025-03-12T15:47:26.318983Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/5ac673e4-a147-42e9-a676-4d54e61cfcaa",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/5ac673e4-a147-42e9-a676-4d54e61cfcaa/images",
+            "usage_count": 1,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "fcdd0db6-e6bb-44c3-aba3-9a8392b5237b",
+                    "created": "2025-03-12T15:47:26.312030Z",
+                    "updated": "2025-03-12T15:47:26.313529Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 7.2,
+                    "risk_level": "high",
+                    "data": {
+                        "title": "Reflected Cross-Site Scripting (XSS)"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "e073da34-e544-4b3f-a87e-8bb1f87f5831",
+            "created": "2025-02-13T15:33:25.755982Z",
+            "updated": "2025-02-13T15:33:25.769445Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/e073da34-e544-4b3f-a87e-8bb1f87f5831",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/e073da34-e544-4b3f-a87e-8bb1f87f5831/images",
+            "usage_count": 1,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "b2f93b85-335b-4f9e-a8bf-0dfe07367146",
+                    "created": "2025-02-13T15:33:25.758297Z",
+                    "updated": "2025-02-13T15:33:25.762098Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 7.2,
+                    "risk_level": "high",
+                    "data": {
+                        "title": "Domain Admin logons to non-Domain Controllers"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "fd645c02-31d0-4b58-b921-492c5d061095",
+            "created": "2025-02-13T15:04:37.457000Z",
+            "updated": "2025-02-13T15:34:08.627056Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/fd645c02-31d0-4b58-b921-492c5d061095",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/fd645c02-31d0-4b58-b921-492c5d061095/images",
+            "usage_count": 1,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "bd97da04-6aa5-4a99-97a1-1c0002ad930f",
+                    "created": "2025-02-13T15:04:37.459581Z",
+                    "updated": "2025-02-13T15:04:37.462992Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 7.2,
+                    "risk_level": "high",
+                    "data": {
+                        "title": "Privileged Credentials Found in Memory"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "7f2a06e0-3583-4c21-b4ee-9473f46e2947",
+            "created": "2022-10-14T13:56:19.986481Z",
+            "updated": "2025-01-29T18:41:11.656282Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/7f2a06e0-3583-4c21-b4ee-9473f46e2947",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/7f2a06e0-3583-4c21-b4ee-9473f46e2947/images",
+            "usage_count": 0,
+            "source": "imported",
+            "tags": [
+                "web",
+                "hardening"
+            ],
+            "translations": [
+                {
+                    "id": "cf07e287-72e3-4a08-9b7c-3f84ffa43b9d",
+                    "created": "2023-07-31T11:58:22.100684Z",
+                    "updated": "2025-01-29T18:41:11.651806Z",
+                    "language": "en-US",
+                    "status": "finished",
+                    "is_main": true,
+                    "risk_score": 6.5,
+                    "risk_level": "medium",
+                    "data": {
+                        "title": "Insecure HTTP cookies"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "a663a148-8ba7-4db7-b974-f2c2d6aaad6c",
+            "created": "2022-10-14T13:54:04.077229Z",
+            "updated": "2025-01-29T18:41:11.703569Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/a663a148-8ba7-4db7-b974-f2c2d6aaad6c",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/a663a148-8ba7-4db7-b974-f2c2d6aaad6c/images",
+            "usage_count": 1,
+            "source": "imported",
+            "tags": [
+                "web"
+            ],
+            "translations": [
+                {
+                    "id": "01a38df1-a5f0-4ca9-82d1-460a227798cd",
+                    "created": "2023-07-31T11:58:22.078173Z",
+                    "updated": "2025-01-29T18:41:11.700018Z",
+                    "language": "en-US",
+                    "status": "finished",
+                    "is_main": true,
+                    "risk_score": 6.5,
+                    "risk_level": "medium",
+                    "data": {
+                        "title": "Cross-Site Request Forgery (CSRF)"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "288e6ef9-908d-408d-854e-a1b9a9cb14d9",
+            "created": "2025-02-11T20:34:54.552335Z",
+            "updated": "2025-02-11T20:34:54.561932Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/288e6ef9-908d-408d-854e-a1b9a9cb14d9",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/288e6ef9-908d-408d-854e-a1b9a9cb14d9/images",
+            "usage_count": 1,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "a0f86070-5c97-4af0-a332-cf6fc47bebd7",
+                    "created": "2025-02-11T20:34:54.554193Z",
+                    "updated": "2025-02-11T20:34:54.555963Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 6.3,
+                    "risk_level": "medium",
+                    "data": {
+                        "title": "Accounts Mapped to Service Principal Name"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "e9ad8044-b82c-43e4-bbba-dec292a91671",
+            "created": "2022-10-19T10:34:49.215652Z",
+            "updated": "2025-01-29T18:41:11.714439Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/e9ad8044-b82c-43e4-bbba-dec292a91671",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/e9ad8044-b82c-43e4-bbba-dec292a91671/images",
+            "usage_count": 0,
+            "source": "imported",
+            "tags": [
+                "web"
+            ],
+            "translations": [
+                {
+                    "id": "6c9802fc-2595-4988-a45e-f9aa8365604e",
+                    "created": "2023-07-31T11:58:22.089079Z",
+                    "updated": "2025-01-29T18:41:11.711297Z",
+                    "language": "en-US",
+                    "status": "finished",
+                    "is_main": true,
+                    "risk_score": 5.9,
+                    "risk_level": "medium",
+                    "data": {
+                        "title": "Disclosure of sensitive data in URL parameters"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "a46786d0-e0c5-464b-946b-df3809ebdaff",
+            "created": "2025-02-12T13:16:14.522236Z",
+            "updated": "2025-02-12T13:16:14.530958Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/a46786d0-e0c5-464b-946b-df3809ebdaff",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/a46786d0-e0c5-464b-946b-df3809ebdaff/images",
+            "usage_count": 6,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "fdb18301-50fd-44ba-9fe7-6bf30e0e38b5",
+                    "created": "2025-02-12T13:16:14.524269Z",
+                    "updated": "2025-02-12T13:16:14.525992Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 5.4,
+                    "risk_level": "medium",
+                    "data": {
+                        "title": "Session not Invalidated at Logout"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "cfd72dd2-2e36-4c39-b30a-0a8bd8f74450",
+            "created": "2022-10-19T09:09:44.416242Z",
+            "updated": "2025-01-29T18:41:11.628255Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/cfd72dd2-2e36-4c39-b30a-0a8bd8f74450",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/cfd72dd2-2e36-4c39-b30a-0a8bd8f74450/images",
+            "usage_count": 0,
+            "source": "imported",
+            "tags": [
+                "web"
+            ],
+            "translations": [
+                {
+                    "id": "9e4b9088-ea5d-4592-ac98-b250a04e07cd",
+                    "created": "2023-07-31T11:58:22.072641Z",
+                    "updated": "2025-01-29T18:41:11.624102Z",
+                    "language": "en-US",
+                    "status": "finished",
+                    "is_main": true,
+                    "risk_score": 5.4,
+                    "risk_level": "medium",
+                    "data": {
+                        "title": "Incorrectly configured HTTP security headers"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "43f2c42a-275d-40de-95fa-4cd8e6688240",
+            "created": "2025-05-09T15:32:24.114542Z",
+            "updated": "2025-05-09T15:32:24.127279Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/43f2c42a-275d-40de-95fa-4cd8e6688240",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/43f2c42a-275d-40de-95fa-4cd8e6688240/images",
+            "usage_count": 1,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "451e774d-04d1-4229-b863-29e9455e3a0b",
+                    "created": "2025-05-09T15:32:24.116013Z",
+                    "updated": "2025-05-09T15:32:24.117875Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 5.3,
+                    "risk_level": "medium",
+                    "data": {
+                        "title": "SMB Signing Disabled"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "959818ec-5650-48dc-a823-968ffe50a888",
+            "created": "2025-04-01T14:10:12.348744Z",
+            "updated": "2025-04-01T14:10:12.357792Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/959818ec-5650-48dc-a823-968ffe50a888",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/959818ec-5650-48dc-a823-968ffe50a888/images",
+            "usage_count": 2,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "b2094340-aa98-4d01-9a95-342c28ea7b6a",
+                    "created": "2025-04-01T14:10:12.350681Z",
+                    "updated": "2025-04-01T14:10:12.352466Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 5.3,
+                    "risk_level": "medium",
+                    "data": {
+                        "title": "User Enumeration"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "ea88a309-5028-431d-a01d-d3231bfd2987",
+            "created": "2022-10-19T09:55:07.084111Z",
+            "updated": "2025-01-29T18:41:11.602036Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/ea88a309-5028-431d-a01d-d3231bfd2987",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/ea88a309-5028-431d-a01d-d3231bfd2987/images",
+            "usage_count": 0,
+            "source": "imported",
+            "tags": [
+                "infrastructure",
+                "external"
+            ],
+            "translations": [
+                {
+                    "id": "4edb7fa1-6f6b-4452-9469-5a5832a0cc6c",
+                    "created": "2023-07-31T11:58:22.081518Z",
+                    "updated": "2025-01-29T18:41:11.596609Z",
+                    "language": "en-US",
+                    "status": "finished",
+                    "is_main": true,
+                    "risk_score": 4.8,
+                    "risk_level": "medium",
+                    "data": {
+                        "title": "Untrusted TLS certificates"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "e750f10f-0f61-4ee7-b12e-4807e10484b5",
+            "created": "2025-03-31T19:13:39.575027Z",
+            "updated": "2025-04-21T01:31:36.152132Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/e750f10f-0f61-4ee7-b12e-4807e10484b5",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/e750f10f-0f61-4ee7-b12e-4807e10484b5/images",
+            "usage_count": 1,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "5c17804b-276c-463d-804d-a64b637d6c7d",
+                    "created": "2025-03-31T19:13:39.577555Z",
+                    "updated": "2025-03-31T19:13:39.580193Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 4.5,
+                    "risk_level": "medium",
+                    "data": {
+                        "title": "SP-Initiated SAML Deflate \"Decompression Bomb\""
+                    }
+                }
+            ]
+        },
+        {
+            "id": "0929ef47-133e-4f34-bd7a-c181fc477a0f",
+            "created": "2025-02-12T20:27:14.219821Z",
+            "updated": "2025-02-12T20:27:14.234859Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/0929ef47-133e-4f34-bd7a-c181fc477a0f",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/0929ef47-133e-4f34-bd7a-c181fc477a0f/images",
+            "usage_count": 0,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "efe9fd5e-c474-43ee-b579-6fdf9a067c4e",
+                    "created": "2025-02-12T20:27:14.222486Z",
+                    "updated": "2025-02-12T20:27:14.225853Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 4.3,
+                    "risk_level": "medium",
+                    "data": {
+                        "title": "LDAP Signing and LDAPS Channel Binding Not Enforced"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "0d8f1382-fa8d-4819-b480-d6d51b6059d0",
+            "created": "2025-02-21T23:50:16.351747Z",
+            "updated": "2025-02-21T23:50:16.362130Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/0d8f1382-fa8d-4819-b480-d6d51b6059d0",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/0d8f1382-fa8d-4819-b480-d6d51b6059d0/images",
+            "usage_count": 2,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "a60f9196-a3d0-4a3c-82c4-93d78e91888a",
+                    "created": "2025-02-21T23:50:16.353865Z",
+                    "updated": "2025-02-21T23:50:16.355894Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 4.2,
+                    "risk_level": "medium",
+                    "data": {
+                        "title": "Access Control Violation"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "7f1470ff-51b8-4dd1-b212-d9ef51f4e35f",
+            "created": "2025-04-20T17:01:30.226285Z",
+            "updated": "2025-04-20T17:01:30.236758Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/7f1470ff-51b8-4dd1-b212-d9ef51f4e35f",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/7f1470ff-51b8-4dd1-b212-d9ef51f4e35f/images",
+            "usage_count": 1,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "733a43fa-b993-4ef5-abe9-ec24d44a9f3a",
+                    "created": "2025-04-20T17:01:30.228869Z",
+                    "updated": "2025-04-20T17:01:30.230629Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 3.7,
+                    "risk_level": "low",
+                    "data": {
+                        "title": "Insufficient Session Expiration"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "31e881fb-0543-4aa8-ab12-df95a1ae7222",
+            "created": "2025-04-07T18:00:58.277041Z",
+            "updated": "2025-04-07T18:00:58.285668Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/31e881fb-0543-4aa8-ab12-df95a1ae7222",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/31e881fb-0543-4aa8-ab12-df95a1ae7222/images",
+            "usage_count": 0,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "0897c0c3-af82-40d3-b516-f6b769221f96",
+                    "created": "2025-04-07T18:00:58.279270Z",
+                    "updated": "2025-04-07T18:00:58.280732Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 3.7,
+                    "risk_level": "low",
+                    "data": {
+                        "title": "GraphQL suggestions enabled"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "6e0a7972-56a9-4bdd-9a33-4d3eab162b87",
+            "created": "2025-04-01T13:52:24.644956Z",
+            "updated": "2025-04-01T13:52:24.656834Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/6e0a7972-56a9-4bdd-9a33-4d3eab162b87",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/6e0a7972-56a9-4bdd-9a33-4d3eab162b87/images",
+            "usage_count": 0,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "9f3fc463-d646-4144-8cb4-a235a042c8f1",
+                    "created": "2025-04-01T13:52:24.647289Z",
+                    "updated": "2025-04-01T13:52:24.650201Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 3.7,
+                    "risk_level": "low",
+                    "data": {
+                        "title": "Strict-Transport-Security Header not Utilized"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "9b7ddaca-3cb0-40a8-97dc-374bdef87933",
+            "created": "2025-03-17T19:23:06.910671Z",
+            "updated": "2025-03-17T19:23:06.920227Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/9b7ddaca-3cb0-40a8-97dc-374bdef87933",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/9b7ddaca-3cb0-40a8-97dc-374bdef87933/images",
+            "usage_count": 1,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "71bf0921-ea46-4998-a0ab-0505942793c0",
+                    "created": "2025-03-17T19:23:06.912446Z",
+                    "updated": "2025-03-17T19:23:06.913896Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 3.7,
+                    "risk_level": "low",
+                    "data": {
+                        "title": "Sensitive Files Accessible to Unauthenticated Users"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "90f311bf-4ff9-4ff5-829d-b8627164fbc9",
+            "created": "2024-12-27T18:44:04.012612Z",
+            "updated": "2025-02-04T13:12:15.117181Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/90f311bf-4ff9-4ff5-829d-b8627164fbc9",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/90f311bf-4ff9-4ff5-829d-b8627164fbc9/images",
+            "usage_count": 3,
+            "source": "imported",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "092ffeb7-85cc-4c8f-9dfc-773de711ecc1",
+                    "created": "2024-12-27T18:44:04.013579Z",
+                    "updated": "2025-02-04T13:12:15.113916Z",
+                    "language": "en-US",
+                    "status": "finished",
+                    "is_main": true,
+                    "risk_score": 3.7,
+                    "risk_level": "low",
+                    "data": {
+                        "title": "Outdated JavaScript Libraries "
+                    }
+                }
+            ]
+        },
+        {
+            "id": "f84b11d1-40fa-4fbe-8114-6dcc3400f5cc",
+            "created": "2022-10-19T08:55:19.621926Z",
+            "updated": "2025-01-29T18:41:11.680204Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/f84b11d1-40fa-4fbe-8114-6dcc3400f5cc",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/f84b11d1-40fa-4fbe-8114-6dcc3400f5cc/images",
+            "usage_count": 1,
+            "source": "imported",
+            "tags": [
+                "web",
+                "hardening",
+                "external",
+                "config"
+            ],
+            "translations": [
+                {
+                    "id": "012f3ea2-fc08-4ce3-8243-5cfc5f08df39",
+                    "created": "2023-07-31T11:58:22.105294Z",
+                    "updated": "2025-01-29T18:41:11.677214Z",
+                    "language": "en-US",
+                    "status": "finished",
+                    "is_main": true,
+                    "risk_score": 3.6,
+                    "risk_level": "low",
+                    "data": {
+                        "title": "Session management weaknesses"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "d0022043-c4b8-4bdb-872c-5d1cd7d4f6ad",
+            "created": "2025-03-03T17:48:21.923119Z",
+            "updated": "2025-03-03T17:48:21.935170Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/d0022043-c4b8-4bdb-872c-5d1cd7d4f6ad",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/d0022043-c4b8-4bdb-872c-5d1cd7d4f6ad/images",
+            "usage_count": 0,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "c6fd9d68-c36d-4265-b5d4-92f022e50a6b",
+                    "created": "2025-03-03T17:48:21.924975Z",
+                    "updated": "2025-03-03T17:48:21.927644Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 3.5,
+                    "risk_level": "low",
+                    "data": {
+                        "title": "Malicious File Upload"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "d55a3350-aac5-440e-8a8f-95d972c0c450",
+            "created": "2025-02-08T19:38:27.972613Z",
+            "updated": "2025-02-08T19:38:27.980810Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/d55a3350-aac5-440e-8a8f-95d972c0c450",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/d55a3350-aac5-440e-8a8f-95d972c0c450/images",
+            "usage_count": 1,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "9d3e7b5e-8357-4d09-8155-9ed352dc36d9",
+                    "created": "2025-02-08T19:38:27.974129Z",
+                    "updated": "2025-02-08T19:38:27.975828Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 3.1,
+                    "risk_level": "low",
+                    "data": {
+                        "title": "Lack of Logout Functionality"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "851b933e-4f87-47af-b9c9-c6b534b2924a",
+            "created": "2025-02-05T20:50:20.507346Z",
+            "updated": "2025-02-05T20:54:47.214668Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/851b933e-4f87-47af-b9c9-c6b534b2924a",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/851b933e-4f87-47af-b9c9-c6b534b2924a/images",
+            "usage_count": 1,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "f35f17ac-e71e-45d9-8dd7-c37a369e8772",
+                    "created": "2025-02-05T20:50:20.508433Z",
+                    "updated": "2025-02-05T20:50:20.509878Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 3.1,
+                    "risk_level": "low",
+                    "data": {
+                        "title": "Reliance on Client-Side Input Validation"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "a532ff7c-0cdd-42b3-8560-b8c42335a766",
+            "created": "2025-03-31T19:11:46.304626Z",
+            "updated": "2025-03-31T19:11:46.314999Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/a532ff7c-0cdd-42b3-8560-b8c42335a766",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/a532ff7c-0cdd-42b3-8560-b8c42335a766/images",
+            "usage_count": 0,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "7b3f2cd9-5e27-4c48-ae2a-aab388cb866f",
+                    "created": "2025-03-31T19:11:46.306971Z",
+                    "updated": "2025-03-31T19:11:46.309465Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": null,
+                    "risk_level": null,
+                    "data": {
+                        "title": "TODO: New Template Title"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "323dbfe1-39ef-4769-8172-6d37a4ec2b7c",
+            "created": "2025-03-31T18:51:32.144277Z",
+            "updated": "2025-03-31T18:51:32.154471Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/323dbfe1-39ef-4769-8172-6d37a4ec2b7c",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/323dbfe1-39ef-4769-8172-6d37a4ec2b7c/images",
+            "usage_count": 0,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "6d96ea26-fc52-4991-b319-9b8b26822b51",
+                    "created": "2025-03-31T18:51:32.146842Z",
+                    "updated": "2025-03-31T18:51:32.149004Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": null,
+                    "risk_level": null,
+                    "data": {
+                        "title": "TODO: New Template Title"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "f4da15fc-9112-4568-8d27-23a7233a5cfd",
+            "created": "2025-03-31T18:28:21.189967Z",
+            "updated": "2025-03-31T18:28:21.204685Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/f4da15fc-9112-4568-8d27-23a7233a5cfd",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/f4da15fc-9112-4568-8d27-23a7233a5cfd/images",
+            "usage_count": 0,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "e8c1a459-0acd-4b0e-bddf-119699978207",
+                    "created": "2025-03-31T18:28:21.193942Z",
+                    "updated": "2025-03-31T18:28:21.197941Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": null,
+                    "risk_level": null,
+                    "data": {
+                        "title": "TODO: New Template Title"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "3d245a15-024e-4a6b-9682-186699735631",
+            "created": "2025-02-21T17:00:56.711786Z",
+            "updated": "2025-02-21T17:00:56.717942Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/3d245a15-024e-4a6b-9682-186699735631",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/3d245a15-024e-4a6b-9682-186699735631/images",
+            "usage_count": 0,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "2e1cb275-64b2-42ac-992c-5e09db0eff2f",
+                    "created": "2025-02-21T17:00:56.712700Z",
+                    "updated": "2025-02-21T17:00:56.713857Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 0.0,
+                    "risk_level": "info",
+                    "data": {
+                        "title": "Lack of Automated Alerting on Rogue Access Points"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "bcfc6689-7fc2-4ad4-a425-7072564699e8",
+            "created": "2025-02-21T16:56:59.703451Z",
+            "updated": "2025-02-21T17:02:44.727224Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/bcfc6689-7fc2-4ad4-a425-7072564699e8",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/bcfc6689-7fc2-4ad4-a425-7072564699e8/images",
+            "usage_count": 0,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "9ccb542e-b2df-49e7-b2bc-8cd7339810ad",
+                    "created": "2025-02-21T16:56:59.707573Z",
+                    "updated": "2025-02-21T16:56:59.708718Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": 0.0,
+                    "risk_level": "info",
+                    "data": {
+                        "title": "Certificate-Based Authentication Not Configured for Corporate Network"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "2006c242-b5ad-4888-a408-224903e89c41",
+            "created": "2025-02-04T16:52:40.121869Z",
+            "updated": "2025-02-04T16:52:51.987132Z",
+            "details": "https://sidekick.sysre.pt/api/v1/findingtemplates/2006c242-b5ad-4888-a408-224903e89c41",
+            "images": "https://sidekick.sysre.pt/api/v1/findingtemplates/2006c242-b5ad-4888-a408-224903e89c41/images",
+            "usage_count": 0,
+            "source": "created",
+            "tags": [],
+            "translations": [
+                {
+                    "id": "8872a532-c95d-43b9-8634-714cca464f15",
+                    "created": "2025-02-04T16:52:40.124044Z",
+                    "updated": "2025-02-04T16:52:40.125398Z",
+                    "language": "en-US",
+                    "status": "in-progress",
+                    "is_main": true,
+                    "risk_score": null,
+                    "risk_level": null,
+                    "data": {
+                        "title": "Multicast/Broadcast Relay Attacks"
+                    }
+                }
+            ]
+        }
+    ]
+}
+

@@ -7,6 +7,7 @@ from lib.processors.vulnscan_processor import VulnScanProcessor
 from lib.processors.vulnimport_processor import VulnImportProcessor
 from lib.processors.vulnupload_processor import VulnUploadProcessor
 from lib.processors.reportcompletion_processor import ReportCompletionProcessor
+from lib.processors.ept_processor import EPTProcessor
 
 def main():
     parser = argparse.ArgumentParser(
@@ -15,12 +16,14 @@ def main():
         epilog="""
 Report Types:
   vulnScan        Process vulnerability scan results from multiple tools
+  eptReport       Generate EPT assessment reports from scan outputs
 
 Examples:
   reporting_sidekick.py vulnScan reportCreator --nessus /path/to/nessus --nuclei /path/to/nuclei
   reporting_sidekick.py vulnScan importVulns --nessus /path/to/nessus --nuclei /path/to/nuclei
   reporting_sidekick.py vulnScan uploadVulnsToReport --xlsx report.xlsx --project-id abc123
   reporting_sidekick.py vulnScan completeReport --project-id abc123 --sections executive_summary
+  reporting_sidekick.py eptReport --directory /path/to/ept-output
         """
     )
     
@@ -210,6 +213,31 @@ Examples:
         help='Enable verbose output'
     )
 
+    # EPT Report subparser
+    ept_parser = subparsers.add_parser(
+        'eptReport',
+        help='Generate EPT assessment reports from scan outputs',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  reporting_sidekick.py eptReport --directory /path/to/ept-output
+  reporting_sidekick.py eptReport -d ./client-assessment --verbose
+        """
+    )
+    
+    ept_parser.add_argument(
+        '--directory', '-d',
+        type=str,
+        required=True,
+        help='Directory containing EPT scan output files (should follow ept-template structure)'
+    )
+    
+    ept_parser.add_argument(
+        '--verbose', '-v',
+        action='store_true',
+        help='Enable verbose output'
+    )
+
     args = parser.parse_args()
 
     try:
@@ -283,6 +311,9 @@ Examples:
             else:
                 print(f"Error: Unknown vulnScan action '{args.vulnscan_action}'")
                 sys.exit(1)
+        elif args.report_type == 'eptReport':
+            processor = EPTProcessor(verbose=args.verbose)
+            processor.generate_ept_report(args.directory)
         else:
             print(f"Error: Unknown report type '{args.report_type}'")
             sys.exit(1)

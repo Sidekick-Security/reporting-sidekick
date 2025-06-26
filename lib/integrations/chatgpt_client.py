@@ -613,3 +613,500 @@ Focus on actionable compliance guidance that security and compliance teams can i
             if self.verbose:
                 print(f"Connection test failed: {str(e)}")
             return False
+
+    # M365-specific methods
+    def generate_m365_executive_summary(self, project_details: Dict, vulnerability_details: List[Dict]) -> str:
+        """Generate executive summary for M365 security assessment report"""
+        
+        # Count vulnerabilities by severity and get formatted string
+        vuln_counts = self._count_m365_vulnerabilities_by_severity(vulnerability_details)
+        formatted_vuln_count = vuln_counts["formatted_string"]
+        
+        # Generate M365 business risks content
+        business_risks_content = self.generate_m365_business_risks(project_details, vulnerability_details)
+        
+        # Construct M365-specific prompt
+        prompt = f"""
+        ---Instructions---
+        You are a professional report writer for Microsoft 365 security assessments. Your task is to generate well-structured, client-focused report sections based on the following information. 
+        Ensure the tone is professional and tailored to the client. 
+        Use concise language. HTML markdown is supported and should be used where needed in the template. 
+        Anything with a [] should be filled in by you using the information in the project details and vulnerability details, do not keep the brackets in the output. 
+        Be sure to remove the vulnerability count of any severity that has 0. For example there should be no instances where zero (0) should be written in this section.
+        The scope is in a following section and should not be included here. 
+        Any numbers should be written as the following "one (1), two (2), etc." 
+        Avoid using bold in any sentences that do not already have it, If the sentence has bold, you should keep it in the output. This is going to be directly inserted into a markdown section, so do not include include the word "markdown" in the output.
+        If any finding has a medium risk, this should changed in the output to be moderate severity.
+        Dates should be written in the following format MM/DD/YYYY
+        Words to avoid: comprehensive, robust, significant
+        Anything between ---Template--- should be used as the template.
+        ---Instructions---
+
+        ---Template---
+        [Customer] engaged Sidekick Security to perform a Microsoft 365 security configuration assessment against [summary of scope]. This assessment supports [Customer]'s broader strategic cybersecurity initiatives and helps identify configuration weaknesses that may put [Customer]'s cloud environment and data at risk. This report presents the results of this M365 assessment and the potential compliance impacts that Sidekick's findings might have. 
+
+        The goal of this assessment was to [a broad statement about improving the M365 security posture and configuration of the organization]. The assessment started on [start date in following format MM/DD/YYYY] and ended on [end date in following format MM/DD/YYYY] and uncovered {formatted_vuln_count}. 
+
+        {business_risks_content}
+        ---Template---
+        
+        ---Project Details---
+        Project Name: {project_details.get('project_name', 'M365 Security Assessment')}
+        Project Type: {project_details.get('project_type', 'M365 Configuration Review')}
+        Scope: {project_details.get('scope', 'Microsoft 365 tenant configuration')}
+        Timeframe: {project_details.get('timeframe', 'Assessment period')}
+        ---Project Details---
+
+        ---M365 Vulnerability Details---
+        {self._format_m365_vulnerabilities_for_prompt(vulnerability_details)}
+        ---M365 Vulnerability Details---
+        """
+        
+        return self._make_chat_request(
+            "You are an expert M365 security consultant writing an executive summary.",
+            prompt,
+            "M365 Executive Summary"
+        )
+
+    def generate_m365_business_risks(self, project_details: Dict, vulnerability_details: List[Dict]) -> str:
+        """Generate M365-specific business risks content"""
+        
+        prompt = f"""
+        Based on the M365 security findings provided, generate a business-focused paragraph that explains the potential business impact of these M365 configuration weaknesses. Focus on:
+        
+        1. Data security risks in the cloud environment
+        2. Identity and access management concerns
+        3. Collaboration security implications
+        4. Compliance and regulatory impact
+        5. Business continuity risks
+        
+        Keep it concise (2-3 sentences) and avoid technical jargon. Focus on business impact rather than technical details.
+        
+        M365 Findings Summary:
+        {self._format_m365_vulnerabilities_for_prompt(vulnerability_details)}
+        """
+        
+        return self._make_chat_request(
+            "You are a business risk analyst specializing in M365 security.",
+            prompt,
+            "M365 Business Risks"
+        )
+
+    def generate_m365_identified_risks(self, findings_data: List[Dict], project_details: Dict) -> str:
+        """Generate M365 Summary of Business Risks section using the standard template"""
+        
+        prompt = f"""
+        ---Instructions---
+        You are a professional report writer for M365 security assessments. 
+        Your task is to generate well-structured, client-focused report sections based on the following information.
+        Ensure the tone is professional and tailored to the client. 
+        Use concise language. HTML markdown is supported and should be used where needed in the template. 
+        Anything with a [] should be filled in by you using the information in the project details, do not keep the brackets in the output. 
+        Avoid using bold in any sentences that do not already have it. If the sentence has bold, you should keep it in the output.
+        This is going to be directly inserted into a markdown section, so do not include include the word "markdown" in the output.
+        If any finding has a medium risk, this should be changed in the output to be moderate severity.
+        Words to avoid: comprehensive, robust, significant
+        Anything between ---Template--- should be used as the template.
+        ---Instructions---
+        ---Template---
+        Across the findings summarized above, the following could lead to:
+        * [Summarize 4-5 business or compliance risks using the M365 vulnerability details. Use the compliance frameworks to help fill in compliance specific information where needed. Focus on M365-specific business impacts like cloud data exposure, identity management gaps, collaboration security risks, and regulatory compliance violations.]
+
+        ---Template---
+
+        Project Details:
+        {project_details}
+        
+        M365 Vulnerability Details:
+        {self._format_m365_vulnerabilities_for_prompt(findings_data)}
+        """
+        
+        return self._make_chat_request(
+            "You are a professional M365 security consultant writing business risk analysis.",
+            prompt,
+            "M365 Summary of Business Risks"
+        )
+
+    def generate_m365_high_level_recommendations(self, project_details: Dict, findings_data: List[Dict]) -> str:
+        """Generate M365 high-level recommendations using the standard template"""
+        
+        prompt = f"""
+        ---Instructions---
+        You are a professional report writer for M365 security assessments. 
+        Your task is to generate well-structured, client-focused report sections based on the following information.
+        Ensure the tone is professional and tailored to the client. 
+        Use concise language. HTML markdown is supported and should be used where needed in the template. 
+        Anything with a [] should be filled in by you using the information in the project details, do not keep the brackets in the output. 
+        Avoid using bold in any sentences that do not already have it. If the sentence has bold, you should keep it in the output.
+        This is going to be directly inserted into a markdown section, so do not include include the word "markdown" in the output.
+        If any finding has a medium risk, this should be changed in the output to be moderate severity.
+        Words to avoid: comprehensive, robust, significant
+        Anything between ---Template--- should be used as the template.
+        ---Instructions---
+        ---Template---
+        Taking into consideration all of the issues and environment learnings that have been identified throughout this M365 assessment, Sidekick highly recommends to:
+        * [Summarize some of the strategic M365 recommendations that client should move forward with. Focus on M365-specific improvements like identity and access management, collaboration security, cloud configuration hardening, and compliance alignment.]
+
+        ---Template---
+
+        Project Details:
+        {project_details}
+        
+        M365 Vulnerability Details:
+        {self._format_m365_vulnerabilities_for_prompt(findings_data)}
+        """
+        
+        return self._make_chat_request(
+            "You are a professional M365 security consultant providing strategic recommendations.",
+            prompt,
+            "M365 High-Level Recommendations"
+        )
+
+    def get_m365_compliance_mappings(self, vulnerability_details: List[Dict], frameworks: List[str]) -> str:
+        """Generate M365 compliance mappings organized by finding name"""
+        
+        frameworks_str = ", ".join(frameworks)
+        
+        # Extract finding titles for the prompt
+        finding_titles = [vuln.get('title', 'Unknown') for vuln in vulnerability_details]
+        
+        prompt = f"""
+        Based on the M365 security findings provided, generate detailed compliance mappings organized by finding name, showing which compliance controls apply to each specific finding.
+
+        Requirements:
+        - Organize by finding name first, then list applicable compliance controls
+        - Map each finding to specific control IDs in each framework
+        - Focus on M365-specific compliance requirements
+        - Use control IDs only (not titles or descriptions)
+        - Consider M365 cloud security and configuration requirements
+        - Use the exact finding titles provided
+
+        Compliance Frameworks to map: {frameworks_str}
+
+        M365 Finding Titles:
+        {', '.join(finding_titles)}
+
+        M365 Finding Details:
+        {self._format_m365_vulnerabilities_for_prompt(vulnerability_details)}
+
+        Return as JSON structure organized by finding name:
+        {{
+            "Finding Title 1": {{
+                "SOC 2": ["CC6.1", "CC6.2"],
+                "NIST CSF": ["PR.AC-1", "PR.DS-1"],
+                "ISO 27001": ["A.9.1.1", "A.9.2.1"]
+            }},
+            "Finding Title 2": {{
+                "SOC 2": ["CC7.1"],
+                "NIST CSF": ["DE.CM-1"],
+                "ISO 27001": ["A.12.4.1"]
+            }}
+        }}
+
+        Important: Use the exact finding titles from the list above. Only include control IDs that are genuinely relevant to each specific M365 finding.
+        """
+        
+        return self._make_chat_request(
+            "You are an M365 compliance expert mapping security findings to compliance frameworks.",
+            prompt,
+            "M365 Compliance Mappings"
+        )
+
+    def generate_m365_finding_compliance_implications(self, finding: Dict, frameworks: List[str], compliance_mappings: Dict) -> Dict:
+        """Generate compliance implications for a specific M365 finding"""
+        
+        frameworks_str = ", ".join(frameworks)
+        
+        prompt = f"""
+        Based on the specific M365 finding provided and the compliance frameworks, generate detailed compliance implications.
+
+        Requirements:
+        - Focus on how this specific M365 configuration issue impacts compliance
+        - Map to specific controls in each framework
+        - Provide clear, actionable compliance impact descriptions
+        - Consider M365 cloud security requirements
+        - Return as JSON structure
+
+        Compliance Frameworks: {frameworks_str}
+
+        M365 Finding Details:
+        Title: {finding.get('title', 'Unknown')}
+        Description: {finding.get('description', 'No description')}
+        Severity: {finding.get('severity', 'Unknown')}
+        Category: {finding.get('vulnerability_type', 'Unknown')}
+        Affected Components: {finding.get('affected_components', [])}
+
+        Return as JSON:
+        {{
+            "framework_name": {{
+                "control_id": {{
+                    "title": "Control Title",
+                    "description": "How this specific M365 finding impacts this control"
+                }}
+            }}
+        }}
+        """
+        
+        try:
+            response = self._make_chat_request(
+                "You are an M365 compliance expert analyzing specific finding compliance impacts.",
+                prompt,
+                "M365 Finding Compliance Implications"
+            )
+            
+            # Clean and parse JSON response
+            cleaned_response = self._clean_json_response(response)
+            return json.loads(cleaned_response)
+            
+        except json.JSONDecodeError as e:
+            if self.verbose:
+                print(f"Failed to parse M365 compliance implications JSON: {str(e)}")
+            return {"error": f"Failed to parse compliance implications: {str(e)}"}
+        except Exception as e:
+            if self.verbose:
+                print(f"Error generating M365 compliance implications: {str(e)}")
+            return {"error": f"Error generating compliance implications: {str(e)}"}
+
+    def _count_m365_vulnerabilities_by_severity(self, vulnerability_details: List[Dict]) -> Dict:
+        """Count M365 vulnerabilities by severity level"""
+        counts = {
+            'critical': 0,
+            'high': 0,
+            'medium': 0,
+            'low': 0,
+            'info': 0
+        }
+        
+        for vuln in vulnerability_details:
+            severity = vuln.get('severity', 'medium').lower()
+            if severity in counts:
+                counts[severity] += 1
+        
+        # Generate formatted string for M365 findings
+        formatted_parts = []
+        severity_names = {
+            'critical': 'critical',
+            'high': 'high', 
+            'medium': 'moderate',  # M365 uses moderate instead of medium
+            'low': 'low',
+            'info': 'informational'
+        }
+        
+        for severity, count in counts.items():
+            if count > 0:
+                severity_name = severity_names[severity]
+                if count == 1:
+                    formatted_parts.append(f"one (1) {severity_name} severity configuration issue")
+                else:
+                    count_word = self._number_to_word(count)
+                    formatted_parts.append(f"{count_word} ({count}) {severity_name} severity configuration issues")
+        
+        if len(formatted_parts) == 0:
+            formatted_string = "no security configuration issues"
+        elif len(formatted_parts) == 1:
+            formatted_string = formatted_parts[0]
+        elif len(formatted_parts) == 2:
+            formatted_string = f"{formatted_parts[0]} and {formatted_parts[1]}"
+        else:
+            formatted_string = f"{', '.join(formatted_parts[:-1])}, and {formatted_parts[-1]}"
+        
+        return {
+            **counts,
+            'total': sum(counts.values()),
+            'formatted_string': formatted_string
+        }
+
+    def _format_m365_vulnerabilities_for_prompt(self, vulnerability_details: List[Dict]) -> str:
+        """Format M365 vulnerabilities for ChatGPT prompts"""
+        if not vulnerability_details:
+            return "No M365 vulnerabilities found."
+        
+        formatted_vulns = []
+        for vuln in vulnerability_details:
+            vuln_text = f"Title: {vuln.get('title', 'Unknown')}\n"
+            vuln_text += f"Severity: {vuln.get('severity', 'Unknown')}\n"
+            vuln_text += f"Category: {vuln.get('vulnerability_type', 'Unknown')}\n"
+            vuln_text += f"Description: {vuln.get('description', 'No description')}\n"
+            
+            affected = vuln.get('affected_components', [])
+            if affected:
+                if len(affected) == 1 and "View all instances" in affected[0]:
+                    vuln_text += f"Affected Components: Multiple instances (see Excel for details)\n"
+                else:
+                    vuln_text += f"Affected Components: {', '.join(affected[:5])}\n"
+                    if len(affected) > 5:
+                        vuln_text += f"  ... and {len(affected) - 5} more components\n"
+            
+            vuln_text += f"Recommendation: {vuln.get('recommendation', 'No recommendation provided')}\n"
+            formatted_vulns.append(vuln_text)
+        
+        return "\n---\n".join(formatted_vulns)
+
+    def _number_to_word(self, num: int) -> str:
+        """Convert number to word for M365 reporting"""
+        number_words = {
+            1: "one", 2: "two", 3: "three", 4: "four", 5: "five",
+            6: "six", 7: "seven", 8: "eight", 9: "nine", 10: "ten",
+            11: "eleven", 12: "twelve", 13: "thirteen", 14: "fourteen", 15: "fifteen",
+            16: "sixteen", 17: "seventeen", 18: "eighteen", 19: "nineteen", 20: "twenty"
+        }
+        
+        if num in number_words:
+            return number_words[num]
+        elif num < 100:
+            tens = num // 10
+            ones = num % 10
+            tens_words = {2: "twenty", 3: "thirty", 4: "forty", 5: "fifty", 
+                         6: "sixty", 7: "seventy", 8: "eighty", 9: "ninety"}
+            if ones == 0:
+                return tens_words[tens]
+            else:
+                return f"{tens_words[tens]}-{number_words[ones]}"
+        else:
+            return str(num)
+
+    def generate_m365_compliance_impact_analysis(self, project_details: Dict, vulnerability_details: List[Dict], frameworks: List[str], compliance_mappings: Dict) -> str:
+        """Generate M365 Compliance Impact and Analysis section with table"""
+        
+        # Generate framework descriptions
+        frameworks_section = ""
+        for framework in frameworks:
+            if framework == "SOC 2":
+                desc = "SOC 2 (Service Organization Control 2) is a voluntary compliance standard for service providers storing customer data in the cloud."
+            elif framework == "NIST CSF" or framework == "NIST Cybersecurity Framework":
+                desc = "The NIST Cybersecurity Framework (CSF) is a voluntary set of guidelines and best practices that helps organizations manage cybersecurity risks."
+            elif framework == "CMS ARS":
+                desc = "CMS Application Risk and Security (ARS) provides security controls for healthcare systems managing protected health information."
+            elif framework == "ISO 27001":
+                desc = "ISO 27001 is an international standard that provides requirements for establishing, implementing, maintaining and continually improving an information security management system."
+            else:
+                desc = f"The {framework} framework provides security guidelines and best practices for organizational risk management."
+            
+            frameworks_section += f"* <b>{framework}</b>: {desc}<br>\n"
+        
+        # Generate table headers
+        table_headers = """<table>
+            <thead>
+                <tr>
+                    <th>Vulnerability</th>"""
+        
+        for framework in frameworks:
+            table_headers += f"\n                    <th>[{framework}] Control Impacted</th>"
+        
+        table_headers += "\n                    <th>Potential Compliance Consequence</th>\n                </tr>\n            </thead>"
+        
+        prompt = f"""
+        You are a professional report writer for M365 security assessments. 
+        Your task is to generate the Compliance Impact and Analysis section based on the following information.
+        Ensure the tone is professional and tailored to the client. 
+        Use concise language. HTML markdown is supported and should be used where needed in the template. 
+        Anything with a [] should be filled in by you using the information in the project details, do not keep the brackets in the output. 
+        Avoid using bold in any sentences that do not already have it. 
+        This is going to be directly inserted into a markdown section, so do not include the word "markdown" in the output.
+        If any finding has a medium risk, this should be changed in the output to be moderate severity.
+        Ensure the output does not contain 'html' or three single ticks (```)
+        Be sure to put vulnerabilities in order of risk severity with highest being first.
+
+        ---Template---
+        Relevant compliance frameworks:<br>
+        {frameworks_section}
+
+        The table below maps each vulnerability to the relevant compliance framework controls, highlighting potential compliance consequences:
+
+        {table_headers}
+            <tbody>
+                <tr>
+                    <td style="vertical-align: top;">[Vulnerability title. Be sure to put these in order of risk severity with highest being first]</td>
+                    {chr(10).join([f'<td style="vertical-align: top;">[{framework} controls impacted. These should be gathered from the compliance_mappings. Should be in the following format CC6.6{chr(10)}CC7.2{chr(10)}CC9.2 ]</td>' for framework in frameworks])}
+                    <td style="vertical-align: top;">[Extremely short explanation of potential compliance consequence for M365 configuration issues]</td>
+                </tr>
+            </tbody>
+        </table>
+        ---Template---
+
+        Project Details:
+        {project_details}
+        
+        M365 Vulnerability Details:
+        {self._format_m365_vulnerabilities_for_prompt(vulnerability_details)}
+
+        Compliance Mappings:
+        {compliance_mappings}
+        """
+        
+        return self._make_chat_request(
+            "You are a professional M365 security consultant generating compliance analysis.",
+            prompt,
+            "M365 Compliance Impact and Analysis"
+        )
+
+    def generate_m365_risk_register(self, project_details: Dict, vulnerability_details: List[Dict]) -> str:
+        """Generate M365 Risk Register section grouping findings into business risks"""
+        
+        prompt = f"""
+        You are a professional report writer for M365 security assessments. 
+        Your task is to generate the Risk Register section based on the provided M365 configuration findings.
+        Ensure the tone is professional and tailored to the client.
+        
+        IMPORTANT: Do NOT treat each M365 technical finding as a separate risk. Instead, group related M365 configuration issues into business-level risks that executives would understand and care about.
+        
+        Follow these guidelines for creating M365 business risks:
+        1. Group related M365 findings by their potential business impact
+        2. For example:
+           - Group inactive user accounts and improper group permissions into "Identity and access management risks"
+           - Group Teams/collaboration security issues into "Data exposure through collaboration platforms"
+           - Group Azure security configuration issues into "Cloud infrastructure security gaps"
+           - Group MFA and authentication issues into "Authentication bypass risks"
+        3. Each business risk entry should:
+           - Have a clear business-focused title (not technical)
+           - List the specific M365 findings that contribute to this risk
+           - Identify the business areas impacted (compliance, reputation, operations, etc.)
+           - Provide an overall risk rating based on the combined severity of contributing findings
+           - Offer business-focused mitigation recommendations
+        
+        Use concise language. HTML markdown is supported and should be used where needed in the template. 
+        Anything with a [] should be filled in by you using the information in the project details, do not keep the brackets in the output. 
+        Avoid using bold in any sentences that do not already have it. 
+        This is going to be directly inserted into a markdown section, so do not include the word "markdown" in the output.
+        If any finding has a medium risk, this should be changed in the output to be moderate severity.
+        Ensure the output does not contain 'html' or three single ticks (```)
+
+        ---Template---
+        <h2 id="Risk-Register" class="in-toc numbered">Risk Register</h2>
+        <p>
+        This section outlines the key business risks identified during the M365 security assessment, categorized across various risk profiles: Compliance Risk, Operational Risk, Reputational Risk, Financial Risk, and Business Continuity Risk. This approach ensures a holistic understanding of how M365 configuration weaknesses translate to business impacts beyond compliance requirements.
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Business Risk</th>
+                    <th>Contributing M365 Findings</th>
+                    <th>Risk Profile(s)</th>
+                    <th>Overall Risk Rating</th>
+                    <th>Proposed Mitigation Strategy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="vertical-align: top;">[Business-focused risk description that executives would understand, such as "Identity and access management risks" or "Data exposure through collaboration platforms"]</td>
+                    <td style="vertical-align: top;">[List the specific M365 finding titles that contribute to this business risk]</td>
+                    <td style="vertical-align: top;">[Relevant risk profiles from: Compliance, Operational, Reputational, Financial, and Business Continuity]</td>
+                    <td style="vertical-align: top;">[Overall risk rating based on the combined impact/likelihood of contributing M365 findings]</td>
+                    <td style="vertical-align: top;">[Business-focused mitigation strategy that addresses the overall M365 risk, not just technical fixes]</td>
+                </tr>
+            </tbody>
+        </table>
+        ---Template---
+
+        Project Details:
+        {project_details}
+        
+        M365 Vulnerability Details:
+        {self._format_m365_vulnerabilities_for_prompt(vulnerability_details)}
+        """
+        
+        return self._make_chat_request(
+            "You are a professional M365 security consultant generating business risk analysis.",
+            prompt,
+            "M365 Risk Register"
+        )

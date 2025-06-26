@@ -1,0 +1,12 @@
+M365 Analysis Results
+==================================================
+
+Excel File: inputs/All-Insights.xlsx
+Project ID: 0e2f7b0f-b1aa-4957-9b3c-43fc5dee9bf3
+
+Suggested Mapping:
+  title                <- Insight Label
+  description          <- Insight Description
+  severity             <- Risk Level
+  affected_components  <- Occurrence Message
+  solution             <- Remediation

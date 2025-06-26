@@ -1,0 +1,41 @@
+[
+  {
+    "title": "Multiple Conditional Access Policies Controlling MFA",
+    "description": "Multiple Conditional Access Policies controlling MFA increases complexity and may lead to MFA configuration conflicts.",
+    "severity": "low",
+    "affected_components": "Conditional Access Policy: Virtual Desktop MFA Policy\n\n\nConditional Access Policy: MFA token issuance for guest users in Azure\n\n\nConditional Access Policy: Chris W Test Block SMA Dev Policy\n\n\nConditional Access Policy: Azure AD Identity Protection sign-in risk policy\n\n\nConditional Access Policy: Azure AD Identity Protection user risk policy\n\n\nConditional Access Policy: Require MFA for B2B portal access.\n\n\nConditional Access Policy: Require MFA for Azure Management\n\n\nConditional Access Policy: MFA Required. Sign-in frequency is enabled and browser sessions are not persistent for Administrative users\n\n\nConditional Access Policy: MFA Enforce Policy- All users\n",
+    "solution": "Create one Conditional Access Policy that deals exclusively with MFA. See here for details. https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-azure-mfa",
+    "status": "new",
+    "source": "M365 Security Assessment",
+    "category": "identity_and_system_access",
+    "service_type": "o365",
+    "instance_count": 9,
+    "instances": "Component: Conditional Access Policy: Virtual Desktop MFA Policy\n | Label: Virtual Desktop MFA Policy | Type: ConditionalAccessPolicy\nComponent: Conditional Access Policy: MFA token issuance for guest users in Azure\n | Label: MFA token issuance for guest users in Azure | Type: ConditionalAccessPolicy\nComponent: Conditional Access Policy: Chris W Test Block SMA Dev Policy\n | Label: Chris W Test Block SMA Dev Policy | Type: ConditionalAccessPolicy\nComponent: Conditional Access Policy: Azure AD Identity Protection sign-in risk policy\n | Label: Azure AD Identity Protection sign-in risk policy | Type: ConditionalAccessPolicy\nComponent: Conditional Access Policy: Azure AD Identity Protection user risk policy\n | Label: Azure AD Identity Protection user risk policy | Type: ConditionalAccessPolicy\nComponent: Conditional Access Policy: Require MFA for B2B portal access.\n | Label: Require MFA for B2B portal access. | Type: ConditionalAccessPolicy\nComponent: Conditional Access Policy: Require MFA for Azure Management\n | Label: Require MFA for Azure Management | Type: ConditionalAccessPolicy\nComponent: Conditional Access Policy: MFA Required. Sign-in frequency is enabled and browser sessions are not persistent for Administrative users\n | Label: MFA Required. Sign-in frequency is enabled and browser sessions are not persistent for Administrative users | Type: ConditionalAccessPolicy\nComponent: Conditional Access Policy: MFA Enforce Policy- All users\n | Label: MFA Enforce Policy- All users | Type: ConditionalAccessPolicy"
+  },
+  {
+    "title": "Teams that contain both internal and external members",
+    "description": "Having guest users on teams intended for internal use can expose sensitive data to users outside the company.",
+    "severity": "info",
+    "affected_components": "Team: ARCC\n\n\nTeam: SNF VBP\n",
+    "solution": "Follow these steps to remove external Team members:\n\nGo to 'Active groups' in the admin center.\nSelect a group name.\nNavigate to 'Members' tab in the details pane, then click on 'View all and manage members'.\nTo remove a member, select the 'X' next to their name.\nClick 'Save' to effect the changes.\n",
+    "status": "new",
+    "source": "M365 Security Assessment",
+    "category": "authorization",
+    "service_type": "o365",
+    "instance_count": 2,
+    "instances": "Component: Team: ARCC\n | Label: ARCC | Type: Team\nComponent: Team: SNF VBP\n | Label: SNF VBP | Type: Team"
+  },
+  {
+    "title": "Azure security defaults not enabled",
+    "description": "If you do not use Conditional Access policies, security defaults are an alternative configuration that provides solid protection against the most common threats, largely by enforcing multifactor authentication.",
+    "severity": "low",
+    "affected_components": "Setting: Azure security defaults\n",
+    "solution": "To safeguard against common identity-centered attacks, Azure security defaults insist on rigorous MFA policies involving:\n\nMandatory registration for all users for Microsoft Entra ID Multifactor Authentication\nCompulsory MFA for administrators\nMFA for users as per requirement\nDisabling of legacy authentication protocols\nProtection of privileged activities such as Azure portal access.\nFurther details on enabling security defaults can be found at this link. https://learn.microsoft.com/en-us/entra/fundamentals/security-defaults#enabling-security-defaults ",
+    "status": "new",
+    "source": "M365 Security Assessment",
+    "category": "identity_and_system_access",
+    "service_type": "o365",
+    "instance_count": 1,
+    "instances": "Component: Setting: Azure security defaults\n | Label: 7676 | Type: Metadata"
+  }
+]
